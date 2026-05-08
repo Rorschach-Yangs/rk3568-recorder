@@ -1,0 +1,23 @@
+# Build artifacts
+build/
+*.o
+*.so
+*.a
+
+# Compiled binary
+rk3568-recorder
+
+# Deployment packages
+deploy/
+*.tar.gz
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db

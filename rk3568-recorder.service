@@ -1,0 +1,39 @@
+[Unit]
+Description=RK3568 High-Speed Data Recorder (Edge AI Diagnosis Terminal)
+Documentation=https://github.com/example/rk3568-recorder
+After=network.target local-fs.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/opt/rk3568-recorder
+
+# 实时优先级 + 内存锁定
+ExecStart=/opt/rk3568-recorder/rk3568-recorder /mnt/ssd/data
+LimitRTPRIO=99
+LimitMEMLOCK=infinity
+CPUSchedulingPolicy=fifo
+CPUSchedulingPriority=80
+
+# 看门狗 (60s无响应自动重启)
+WatchdogSec=60
+
+# 重启策略 (掉电/异常退出后60s恢复)
+Restart=always
+RestartSec=60
+
+# 资源限制
+LimitNOFILE=65536
+LimitNPROC=4096
+MemoryMax=512M
+
+# 隔离
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/mnt/ssd/data
+
+[Install]
+WantedBy=multi-user.target
