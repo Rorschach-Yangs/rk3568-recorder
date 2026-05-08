@@ -146,7 +146,7 @@ RK3568 工业级高速数据记录仪（边缘AI诊断终端）
 程序启动后显示实时状态面板:
 
 ┌─────────────────────────────────────────────────────────────┐
-│  RK3568 High-Speed Data Recorder — Edge AI Terminal        │
+│  RK3568 High-Speed Data Recorder — Edge AI Terminal         │
 │  8-ch AD7606 @200kSPS | SATA SSD | PTP | AI Diagnosis       │
 ├────────────┬────────────┬────────────┬────────────┬─────────┤
 │ ACQ(kB/s)  │ WR(kB/s)   │ Overruns   │ Dropped    │ Faults  │
