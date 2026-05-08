@@ -18,6 +18,11 @@ deploy/
 .vscode/
 .idea/
 
+# Personal files (local only)
+patent_disclosure.md
+resume_project.md
+resume_project.txt
+
 # OS files
 .DS_Store
 Thumbs.db
